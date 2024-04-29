@@ -16,16 +16,18 @@ The uncertainty maps of the UQ methods on this regression toy problem look as fo
   <img src="https://user-images.githubusercontent.com/94071944/219909512-1e2065b1-79d7-4eb9-b4e8-bd200c63415b.png" height="408" alt="capacity_curves" />
 </p>
 
-## hotfix (troubleshoot with older tf version)
+## Hotfix (troubleshoot with older tf version)
 
-as etapas foram essas (considerando um terminal linux aberto):
+This is how I settled a functional environment (considering unix OS, in my case, Ubuntu WSL2):
+
+### set virtualenv
 
 python3 -m venv env
 source env/bin/activate
 
-pip install all required libraries, including pip install tf-models-official EXCEPT > tensorflow <
+### install dependencies
 
-this is how I settled a functional environment (considering unix OS, in my case, Ubuntu WSL2):
+pip install all required libraries, including pip install tf-models-official EXCEPT > tensorflow <
 
 pip uninstall tensorflow
 pip uninstall keras
