@@ -15,3 +15,25 @@ The uncertainty maps of the UQ methods on this regression toy problem look as fo
 <p align="center">
   <img src="https://user-images.githubusercontent.com/94071944/219909512-1e2065b1-79d7-4eb9-b4e8-bd200c63415b.png" height="408" alt="capacity_curves" />
 </p>
+
+## hotfix (troubleshoot with older tf version)
+
+as etapas foram essas (considerando um terminal linux aberto):
+
+python3 -m venv env
+source env/bin/activate
+
+pip install all required libraries, including pip install tf-models-official EXCEPT > tensorflow <
+
+this is how I settled a functional environment (considering unix OS, in my case, Ubuntu WSL2):
+
+pip uninstall tensorflow
+pip uninstall keras
+
+pip install tensorflow==2.10.1
+
+export TF_USE_LEGACY_KERAS=True
+
+then it is possible to start the notebook and run the code as it is. Remember to download all libraries in the virtualenv, including jupyter notebook.
+
+p.s : https://stackoverflow.com/questions/43397162/show-matplotlib-plots-and-other-gui-in-ubuntu-wsl1-wsl2
